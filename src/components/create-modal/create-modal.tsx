@@ -14,16 +14,16 @@ interface ModalProps {
     closeModal(): void;
 };
 
-export function CreateModal({ closeModal }: ModalProps) {
-    const Input = ({ label, value, updateValue }: InputProps) => {
-        return (
-            <>
-                <label>{label}</label>
-                <input value={value} onChange={event => updateValue(event.target.value)}></input>
-            </>
-        );
-    };
+const Input = ({ label, value, updateValue }: InputProps) => {
+    return (
+        <>
+            <label>{label}</label>
+            <input value={value} onChange={event => updateValue(event.target.value)}></input>
+        </>
+    );
+};
 
+export function CreateModal({ closeModal }: ModalProps) {
     const [fabricante, setFabricante] = useState("");
     const [modelo, setModelo] = useState("");
     const [lote, setLote] = useState("");
